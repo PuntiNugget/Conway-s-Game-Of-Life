@@ -8,19 +8,49 @@
   <h1>Skateboard Clicker :3</h1>
   
   <button id="Ollie">Ollie!</button>
+  <button id="Poser">Poser 10</button>
+  
   <p id="clicks">0</p>
+  <p id="posers">0</p>
 
   <script>
-    let count = 0;
+    let ollies = 0;
+    let poser = 0;
 
-    const button = document.getElementById('Ollie');
-    const output = document.getElementById('clicks');
+    const ollie = document.getElementById('Ollie');
+    const poser = document.getElementById('Poser');
+    
+    const clicks = document.getElementById('clicks');
+    const posers = document.getElementById('posers');
 
-    button.addEventListener('click', function() {
+    function waitFor(milliseconds) {
+      const startTime = new Date();
+      let currentTime = null;
+      do {
+        currentTime = new Date();
+      } while (currentTime - startTime < milliseconds);
+    }
+
+    ollie.addEventListener('click', function() {
       count++;
       
-      output.textContent = count.toString();
+      clicks.textContent = ollies.toString();
     });
+
+    poser.addEventListener('click', function(){
+      if (count === 10){
+        alert("you've bought one poser!");
+        posers++;
+
+        poser.textContent = poser.toString();
+        poserFunction.call():
+      }
+    });
+
+    function poserFunction(){
+      waitFor.call(100);
+      count++;
+    };
   </script>
 </body>
 </html>
