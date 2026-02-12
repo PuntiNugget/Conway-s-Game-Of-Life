@@ -13,7 +13,7 @@
   
   <button id="btn-ollie">Ollie!</button>
   <button id="btn-buy-poser">Hire Poser (Cost: 10)</button>
-  <button id="btn-buy-poser">Hire Beginner (Cost: 100</button>
+  <button id="btn-buy-beginner">Hire Beginner (Cost: 100</button>
   
   <h3>Ollies: <span id="display-ollies">0</span></h3>
   <h3>Posers Hired: <span id="display-posers">0</span></h3>
@@ -28,6 +28,8 @@
 
     const ollieBtn = document.getElementById('btn-ollie');
     const poserBtn = document.getElementById('btn-buy-poser');
+    const beginnerBtn = documnet.getElementById('btn-buy-beginner');
+    
     const ollieDisplay = document.getElementById('display-ollies');
     const poserDisplay = document.getElementById('display-posers');
     const beginnerDisplay = document.getElementById('display-beginners');
@@ -44,7 +46,9 @@
       }
 
       if (ollieCount < beginnerCost){
-        
+        beginnerBtn.disabled = true;
+      } else {
+        poserBtn.disabled = false;
       }
     }
 
@@ -65,11 +69,27 @@
         alert("You need more ollies to hire a poser!");
       }
     });
+
+    beginnerBtn.addEventListener('click', function(){
+      if (ollieCount >= beginnerCost){
+        ollieCount = ollieCount - beginnerCost; 
+        beginnerCount++;
+        beginnerCost = Math.floor(beginnerCost * 1.5); 
+        beginnerBtn.textContent = "Hire Beginner (Cost: " + beginnerCost + ")";
+        
+        updateDisplay();
+      } else {
+        alert("You need more ollies to hire a beginner!");
+      }
+    });
     
     setInterval(function() {
       if (poserCount > 0) {
         ollieCount = ollieCount + poserCount;
         updateDisplay();
+      }
+      if (beginnerCount > 0){
+        ollieCount = olliecount + beginnerCount*=10
       }
     }, 1000);
 
