@@ -13,12 +13,12 @@
 <script>
   let count = 0;
 
-  const ClickButton = document.getElementById('Ollie');
-  const clickDisplay = document.getElementByID('clicks');
+  const button = document.getElementId('Ollie');
+  const output = document.getElementId('clicks');
 
-  ClickButton.addEventListener('Click', function(){
+  button.addEventListener('click', function() {
     count++;
 
-    clickDisplay.textcontent = count.toString();
+    output.text = count.toString();
   });
 </script>
