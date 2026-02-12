@@ -6,5 +6,5 @@ const clickDisplay = document.getElementByID('output');
 ClickButton.addEventListener('Click', function(){
   count++;
 
-  clickDisplay.textcontent = count;
+  clickDisplay.textcontent = "Tricks: ${count}";
 });
