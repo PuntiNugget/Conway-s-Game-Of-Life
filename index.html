@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Skateboard Clicker</title>
-  <h1>Skateboard Clicker :3</h1>
 </head>
 <body>
+  <h1>Skateboard Clicker :3</h1>
+  
   <button id="Ollie">Ollie!</button>
   <p id="clicks">0</p>
+
+  <script>
+    let count = 0;
+
+    const button = document.getElementById('Ollie');
+    const output = document.getElementById('clicks');
+
+    button.addEventListener('click', function() {
+      count++;
+      
+      output.textContent = count.toString();
+    });
+  </script>
 </body>
 </html>
-
-<script>
-  let count = 0;
-
-  const button = document.getElementId('Ollie');
-  const output = document.getElementId('clicks');
-
-  button.addEventListener('click', function() {
-    count++;
-
-    output.text = count.toString();
-  });
-</script>
